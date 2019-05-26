@@ -1,0 +1,42 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Camera.Styles">
+
+    <!-- White -->
+    <Color x:Key="WhiteColor">#ffffff</Color>
+    <SolidColorBrush x:Key="WhiteColorBrush" Color="{StaticResource WhiteColor}" />
+
+    <!-- Black -->
+    <Color x:Key="BlackColor">#000000</Color>
+    <SolidColorBrush x:Key="BlackColorBrush" Color="{StaticResource BlackColor}" />
+
+    <!-- Offset Black -->
+    <Color x:Key="OffsetBlack">#4d4d4d</Color>
+    <SolidColorBrush x:Key="OffsetBlackBrush" Color="{StaticResource OffsetBlack}" Opacity="0.2"/>
+
+    <!-- Offset White -->
+    <Color x:Key="OffsetWhite">#e6e6e6</Color>
+    <SolidColorBrush x:Key="OffsetWhiteBrush" Color="{StaticResource OffsetWhite}" />
+
+    <!-- Dark Grey -->
+    <Color x:Key="DarkGrey">#595959</Color>
+    <SolidColorBrush x:Key="DarkGreyBrush" Color="{StaticResource DarkGrey}" />
+
+    <!-- Light Grey -->
+
+    <Color x:Key="LightGrey">#737373</Color>
+    <SolidColorBrush x:Key="LightGreyBrush" Color="{StaticResource LightGrey}" />
+
+    <!-- Blue -->
+    <Color x:Key="Blue">#66b3ff</Color>
+    <SolidColorBrush x:Key="BlueBrush" Color="{StaticResource Blue}" />
+
+    <!-- Light Blue -->
+    <Color x:Key="LightBlue">#99ccff</Color>
+    <SolidColorBrush x:Key="LightBlueBrush" Color="{StaticResource LightBlue}" />
+
+    <!-- Blood Red Color -->
+    <Color x:Key="BloodRed">#b30000</Color>
+    <SolidColorBrush x:Key="BloodRedBrush" Color="{StaticResource BloodRed}" />
+
+</ResourceDictionary>

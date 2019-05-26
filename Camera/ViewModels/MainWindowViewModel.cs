@@ -4,7 +4,6 @@ using Camera.Properties;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Imaging;
@@ -13,9 +12,9 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Media.Imaging;
 
-namespace Camera
+namespace Camera.ViewModels
 {
-    public class MainWindowVM : INotifyPropertyChanged
+    public class MainWindowViewModel : ViewModelBase
     {
         #region Private properties
         private IVideoSource videoSource;
@@ -58,13 +57,13 @@ namespace Camera
                 OnPropertyChanged(nameof(Display));
             }
         }
-
         #endregion
 
         #region Constructor
-        public MainWindowVM()
+        public MainWindowViewModel()
         {
             GetVideoDevices();
+            StartCamera();
         }
         #endregion
 
@@ -76,22 +75,13 @@ namespace Camera
                 return new RelayCommand(param =>
                 {
                     Debug.WriteLine("Pressed Take Picture Btn");
+                    Debug.Write("Using capture device " + CurrentDevice);
                     TakePicture();
                 });
             }
         }
 
-        public RelayCommand StartCommand
-        {
-            get
-            {
-                return new RelayCommand(param =>
-                {
-                    Debug.WriteLine("Starting recording");
-                    StartCamera();
-                });
-            }
-        }
+        
 
         public RelayCommand StopCommand
         {
@@ -211,15 +201,6 @@ namespace Camera
             return "error";
         }
 
-        #endregion
-
-        #region Notify Property Changed
-        public event PropertyChangedEventHandler PropertyChanged;
-        /// <summary>
-        /// Tells the event, PropertyChanged, that a property has changed.
-        /// </summary>
-        /// <param name="propertyName"></param>
-        protected virtual void OnPropertyChanged(string propertyName) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         #endregion
     }
 }

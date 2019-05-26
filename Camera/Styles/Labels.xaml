@@ -1,0 +1,12 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Camera.Styles">
+
+    <Style x:Key="HeaderLabelStyle" TargetType="{x:Type Label}" BasedOn="{StaticResource BaseControlForegroundStyle}">
+        <Setter Property="Background" Value="{StaticResource BlueBrush}" />
+        <Setter Property="Foreground" Value="{StaticResource WhiteColorBrush}" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+    </Style>
+    
+</ResourceDictionary>

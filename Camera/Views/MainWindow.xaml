@@ -1,10 +1,11 @@
-﻿<Window x:Class="Camera.MainWindow"
+﻿<Window x:Class="Camera.Views.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Camera"
+        xmlns:Views="clr-namespace:Camera.Views"
         mc:Ignorable="d"
+        x:Name="window"
         xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
         WindowStartupLocation="CenterScreen"
         Title="MainWindow" Height="750" Width="1200">
@@ -17,43 +18,31 @@
 
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="0.15*"/>
             <RowDefinition />
-            <RowDefinition Height=".1*"/>
+            <RowDefinition Height=".15*"/>
         </Grid.RowDefinitions>
 
-        <Image x:Name="videoPlayer" Source="{Binding Path=Display}" />
+        <!-- Header -->
+        <Views:CameraHeaderUserControl DataContext="{Binding ElementName=window}" />
+
+        <Image Grid.Row="1" Source="{Binding Path=Display}" />
         
-        <Grid Grid.Row="1">
+        <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition />
                 <ColumnDefinition />
-                <ColumnDefinition />
-                <ColumnDefinition />
             </Grid.ColumnDefinitions>
-            <ComboBox x:Name="checBox" 
-                      FontSize="40" 
+            
+            <ComboBox Style="{StaticResource ComboBoxVideoCaptureStyle}"
                       ItemsSource="{Binding Path=VideoDevices}" 
                       SelectedItem="{Binding Path=CurrentDevice}"
                       DisplayMemberPath="Name" />
 
-            <Button x:Name="startRecording"
-                    Grid.Column="1"
-                    FontSize="40"
-                    Content="Start"
-                    Command="{Binding Path=StartCommand}"/>
-
-            <Button x:Name="stopRecording"
-                    Grid.Column="2"
-                    FontSize="40"
-                    Content="Stop"
-                    Command="{Binding Path=StopCommand}"/>
-
-            <Button x:Name="takePicture"
+            <Button Style="{StaticResource BaseButtonStyle}"
                     Grid.Column="4"
-                    FontSize="40"
                     Content="Take Picture" 
-                    Command="{Binding Path=TakePictureCommand}"
-                    />
+                    Command="{Binding Path=TakePictureCommand}" />
         </Grid>
     </Grid>
 </Window>

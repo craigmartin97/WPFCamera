@@ -13,17 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Camera
+namespace Camera.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for CameraHeaderUserControl.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class CameraHeaderUserControl : UserControl
     {
-        public MainWindow()
+        public CameraHeaderUserControl()
         {
             InitializeComponent();
-            DataContext = new MainWindowVM();
         }
     }
 }
